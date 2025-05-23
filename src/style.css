@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0a0a0f;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .scanline {
+    @apply pointer-events-none absolute top-0 left-0 w-full h-full overflow-hidden opacity-20;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.05) 50%
+    );
+    background-size: 100% 4px;
+  }
+
+  .grid-bg {
+    @apply absolute top-0 left-0 w-full h-full opacity-10 -z-10;
+    background-image: 
+      linear-gradient(to right, #aa00ff 1px, transparent 1px),
+      linear-gradient(to bottom, #aa00ff 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .terminal-header {
+    @apply font-pixel text-2xl md:text-3xl text-white mb-4 inline-block;
+  }
+
+  .terminal-header::before {
+    @apply text-neon-pink font-mono pr-2 content-['//'];
+  }
+
+  .neon-card {
+    @apply bg-deep-black/50 border border-neon-pink p-5 rounded-md shadow-lg backdrop-blur-sm;
+    box-shadow: 0 0 10px rgba(255, 43, 109, 0.5);
+  }
+
+  .neon-card:hover {
+    @apply border-neon-violet;
+    box-shadow: 0 0 15px rgba(170, 0, 255, 0.7);
+  }
+
+  .terminal-button {
+    @apply px-5 py-3 bg-deep-black text-white border border-neon-pink rounded-md font-mono transition-all duration-300 hover:bg-neon-pink/10;
+    box-shadow: 0 0 5px rgba(255, 43, 109, 0.5);
+  }
+
+  .terminal-button:hover {
+    @apply border-neon-violet;
+    box-shadow: 0 0 15px rgba(170, 0, 255, 0.7);
+  }
+
+  .typed-cursor {
+    @apply text-neon-pink;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+}
+
+/* Typing animation */
+.typing-animation {
+  @apply overflow-hidden whitespace-nowrap border-r-4 border-neon-pink;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #ff2b6d }
+}

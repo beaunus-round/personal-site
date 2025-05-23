@@ -1,0 +1,29 @@
+<script setup lang="ts">
+</script>
+
+<template>
+  <section class="py-20 relative">
+    <div class="container mx-auto px-6">
+      <h2 class="terminal-header">Currently Accepting</h2>
+      
+      <div class="max-w-4xl mx-auto relative">
+        <!-- Glitchy border effect -->
+        <div class="absolute inset-0 border-2 border-neon-pink rounded-lg animate-glitch"></div>
+        
+        <div class="bg-deep-black/80 p-8 rounded-lg relative z-10">
+          <div class="text-3xl text-neon-pink mb-4 animate-pulse-glow">🚨</div>
+          
+          <p class="text-lg mb-6">
+            I'm currently accepting 1–2 clients for Q3 system builds. If you're looking to fix a broken funnel, unify your CRM, or build a lead-gen engine that doesn't rely on hope—now's the time to connect.
+          </p>
+          
+          <div class="text-center">
+            <a href="#contact" class="terminal-button inline-block">
+              Run /book-a-call
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
