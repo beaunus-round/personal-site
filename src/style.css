@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Press+Start+2P&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -33,8 +33,7 @@
 
   .grid-bg {
     @apply absolute top-0 left-0 w-full h-full opacity-10 -z-10;
-    background-image: 
-      linear-gradient(to right, #aa00ff 1px, transparent 1px),
+    background-image: linear-gradient(to right, #aa00ff 1px, transparent 1px),
       linear-gradient(to bottom, #aa00ff 1px, transparent 1px);
     background-size: 20px 20px;
   }
@@ -82,18 +81,129 @@ body {
   width: 100%;
 }
 
-/* Typing animation */
-.typing-animation {
-  @apply overflow-hidden whitespace-nowrap border-r-4 border-neon-pink;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+@layer components {
+  .neon-terminal-box {
+    @apply bg-deep-black/70 p-6 border-l-4 border-neon-pink rounded-sm shadow-inner relative;
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .neon-terminal-box:hover {
+    @apply border-neon-violet;
+    box-shadow: 0 0 10px rgba(170, 0, 255, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .terminal-prefix {
+    @apply font-mono text-sm text-neon-green mb-2;
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer components {
+  .blinking-caret {
+    display: inline-block;
+    width: 1ch;
+    animation: blink-caret 0.8s step-end infinite;
+    color: #ff2b6d;
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+.typing-text {
+  overflow: hidden;
+  white-space: pre-wrap;
+  display: inline-block;
+  animation: typing steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+  word-break: break-word;
+  border-right: 2px solid #00baff;
+  max-width: 100%;
+  width: 0ch;
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 80ch; /* adjust based on average testimonial length */
+  }
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #ff2b6d }
+.stack-tile {
+  @apply p-4 rounded text-center font-mono shadow-lg transition-all;
+}
+
+.neon-tile {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05), 0 0 20px currentColor,
+    inset 0 0 5px currentColor;
+}
+
+.neon-tile:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.stack-glow-tile {
+  @apply p-4 text-center font-mono rounded border border-neon-pink/60 bg-black/60 backdrop-blur-md text-white hover:scale-105 transition-all;
+  box-shadow: inset 0 0 10px rgba(255, 43, 109, 0.3),
+    0 0 12px rgba(255, 43, 109, 0.4), 0 0 30px rgba(255, 43, 109, 0.2);
+}
+
+.cyber-card {
+  @apply p-6 rounded-xl bg-black/60 border border-neon-pink/50 backdrop-blur-md text-left transition-all hover:scale-105;
+  box-shadow: 0 0 15px rgba(255, 43, 109, 0.3),
+    inset 0 0 5px rgba(255, 43, 109, 0.2);
+}
+
+.cyber-icon {
+  @apply w-12 h-12 flex items-center justify-center rounded-full mb-4 text-2xl shadow-lg;
+  box-shadow: 0 0 8px currentColor, 0 0 20px currentColor;
+}
+
+/* Retro CRT card styles */
+.retro-card {
+  @apply bg-black rounded-lg overflow-hidden backdrop-blur-md transition-transform hover:scale-[1.02] cursor-crosshair;
+  position: relative;
+}
+
+/* CRT scanline overlay effect */
+.crt::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 10;
+  pointer-events: none;
+  animation: flicker 1.5s infinite;
+}
+
+/* CRT flicker animation */
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }

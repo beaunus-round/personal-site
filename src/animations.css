@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap");
+
+.font-pixel {
+  font-family: "Orbitron", monospace;
+  font-weight: 700;
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #ff2b6d;
+  width: 0;
+  animation: typing 2.8s steps(27, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .typing-animation {
+    animation: typing-sm 2.8s steps(27, end) forwards,
+      blink-caret 0.75s step-end infinite;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .typing-animation {
+    animation: typing-md 2.8s steps(27, end) forwards,
+      blink-caret 0.75s step-end infinite;
+  }
+}
+
+@media (min-width: 769px) {
+  .typing-animation {
+    animation: typing-lg 2.8s steps(27, end) forwards,
+      blink-caret 0.75s step-end infinite;
+  }
+}
+
+@keyframes typing-sm {
+  from {
+    width: 0;
+  }
+  to {
+    width: min(100%, 25ch);
+  }
+}
+
+@keyframes typing-md {
+  from {
+    width: 0;
+  }
+  to {
+    width: min(100%, 27ch);
+  }
+}
+
+@keyframes typing-lg {
+  from {
+    width: 0;
+  }
+  to {
+    width: min(100%, 30ch);
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ff2b6d;
+  }
+}

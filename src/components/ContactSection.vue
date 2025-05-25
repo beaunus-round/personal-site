@@ -85,7 +85,7 @@ const submitForm = () => {
       
       <div class="max-w-2xl mx-auto">
         <p class="text-lg mb-8">
-          I take on 2–3 clients per quarter. If you've got chaos, I can systemize it.
+          If you've got chaos, I can systemize it.
         </p>
         
         <form @submit.prevent="submitForm" class="space-y-6">
