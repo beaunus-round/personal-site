@@ -16,7 +16,7 @@
             Branding by Books
           </h3>
           <p class="text-white/80 text-sm">
-            GPT enrichment + CRM logic + outbound orchestration = 40% reply rate, booked pipeline.
+            Built an AI-driven lead gen system combining GPT, CRM logic, and outreach flows. Solid reply rates and consistent interest.
           </p>
         </div>
 
@@ -27,7 +27,7 @@
             Jones Appraisal
           </h3>
           <p class="text-white/80 text-sm">
-            Custom AI chatbot for complex legal workflows. SEO rebuilt. Leads doubled.
+            Launched a chatbot to guide legal-focused appraisal leads. Reworked SEO and improved lead quality over time.
           </p>
         </div>
 
@@ -38,7 +38,7 @@
             Hempshire Group
           </h3>
           <p class="text-white/80 text-sm">
-            Directed growth at public cannabis brand. Rebuilt email infra, ops flows, and internal alignment.
+            Directed marketing ops for a public cannabis company. Helped align email, sales, and internal systems for smoother growth.
           </p>
         </div>
       </div>
