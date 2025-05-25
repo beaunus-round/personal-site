@@ -11,7 +11,7 @@ const testimonials = [
     author: 'Bill Hahn, The ReCover Initiative'
   },
   {
-    text: `Every recurring task? Gone. Beau built systems that handled the work so we could focus on growth.`,
+    text: `Beau built systems that handled the work so we could focus on growth.`,
     author: 'Mark Colwell, Commloan & Jones Appraisal'
   },
   {
