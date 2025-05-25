@@ -8,6 +8,7 @@ import ServicesSection from './components/ServicesSection.vue';
 import TechStackSection from './components/TechStackSection.vue';
 import TestimonialsSection from './components/TestimonialsSection.vue';
 import InfrastructureSection from './components/InfrastructureSection.vue';
+import AboutMe from './components/AboutMe.vue';
 import CommandLogSection from './components/CommandLogSection.vue';
 import SignalBoostSection from './components/SignalBoostSection.vue';
 import ContactSection from './components/ContactSection.vue';
@@ -26,6 +27,7 @@ import FooterSection from './components/FooterSection.vue';
       <TechStackSection />
       <TestimonialsSection />
       <InfrastructureSection />
+      <AboutMe />
       <CommandLogSection />
       <SignalBoostSection />
       <ContactSection />
