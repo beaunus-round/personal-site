@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue'
 
 const testimonials = [
   {
-    text: `Beau operates without friction. You hand him the objective, and he quietly moves it forward. No follow-up needed, no excuses, just results.`,
+    text: `Hand Beau the objective, and he quietly moves it forward. No follow-up needed, no excuses, just results.`,
     author: 'Alex Shegelman, Everleaf Capital'
   },
   {
