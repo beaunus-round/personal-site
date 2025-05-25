@@ -7,11 +7,11 @@ const testimonials = [
     author: 'Alex Shegelman, Everleaf Capital'
   },
   {
-    text: `There was never a moment Beau wasn’t fully invested. He cared deeply about the work, stood up for what mattered, and kept projects grounded in real purpose.`,
+    text: `There was never a moment Beau wasn’t fully invested. He cared deeply about the work and kept projects grounded in real purpose.`,
     author: 'Bill Hahn, The ReCover Initiative'
   },
   {
-    text: `Every recurring task? Gone. Beau built systems that handled the work so we could focus on growth. His process cut noise and let the business breathe.`,
+    text: `Every recurring task? Gone. Beau built systems that handled the work so we could focus on growth.`,
     author: 'Mark Colwell, Commloan & Jones Appraisal'
   },
   {
