@@ -8,12 +8,13 @@ const gameArea = ref<HTMLDivElement | null>(null)
 const score = ref(0)
 const lives = ref(3)
 
-let dx = 1 // reset to faster speed
-let dy = 1
-let ballX = 0 // always start top-left
+let dx = 100 // pixels per second
+let dy = 100 // pixels per second
+let ballX = 0
 let ballY = 0
 let paddleX = 140
 const paddleWidth = 80
+let lastTime = 0
 
 onMounted(() => {
   const game = document.getElementById('game-area')
@@ -22,15 +23,20 @@ onMounted(() => {
   function resetBall() {
     ballX = 0
     ballY = 0
-    dx = 0.75
-    dy = 0.75
+    dx = 100 // consistent speed in pixels per second
+    dy = 100
   }
 
-  function draw() {
+  function draw(currentTime: number) {
     if (!ball.value || !paddle.value || !game) return
 
-    ballX += dx
-    ballY += dy
+    // Calculate delta time in seconds
+    const deltaTime = lastTime ? (currentTime - lastTime) / 1000 : 0
+    lastTime = currentTime
+
+    // Move ball based on time, not frames
+    ballX += dx * deltaTime
+    ballY += dy * deltaTime
 
     if (ballX < 0 || ballX > game.clientWidth - 20) {
       dx = -dx
@@ -49,6 +55,7 @@ onMounted(() => {
         lives.value = 3
       }
       resetBall()
+      lastTime = 0 // Reset timing
     }
 
     if (
@@ -65,8 +72,10 @@ onMounted(() => {
 
     cards.value?.forEach(card => {
       const rect = card.getBoundingClientRect()
-      const cardX = rect.left + window.scrollX
-      const cardY = rect.top + window.scrollY
+      const gameRect = game.getBoundingClientRect()
+      const cardX = rect.left - gameRect.left
+      const cardY = rect.top - gameRect.top
+      
       if (
         ballX + 20 > cardX &&
         ballX < cardX + rect.width &&
@@ -88,7 +97,7 @@ onMounted(() => {
     if (paddle.value) paddle.value.style.left = `${paddleX}px`
   })
 
-  draw()
+  requestAnimationFrame(draw)
 })
 </script>
 
@@ -164,7 +173,6 @@ onMounted(() => {
 
 @keyframes borderFlash {
   0%, 100% {
-  
     border-color: white;
   }
   50% {
