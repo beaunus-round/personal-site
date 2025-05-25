@@ -100,6 +100,12 @@ onMounted(() => {
           <div class="text-neon-green font-mono text-lg mt-6 animate-blink">&gt;</div>
         </div>
       </div>
+      <div class="mt-10 flex justify-center">
+  <a href="#contact" class="terminal-button inline-block animate-pulse-glow">
+    Run /book-a-call
+  </a>
+</div>
+
     </div>
   </section>
 </template>
