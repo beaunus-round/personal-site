@@ -178,9 +178,7 @@ const submitForm = async () => {
           </div>
         </form>
         
-        <div class="mt-8 text-center">
-          <p>Or schedule directly → <a href="#" class="text-neon-pink hover:text-neon-violet transition-colors">Calendly</a></p>
-        </div>
+    
       </div>
     </div>
   </section>
