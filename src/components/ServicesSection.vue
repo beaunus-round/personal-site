@@ -7,7 +7,7 @@ const services = [
     heading: 'CRM Logic & Infrastructure',
     color: 'border-neon-pink/70 text-neon-green',
     description:
-      'Architect full-funnel CRM systems using HubSpot, Clay, and Smartlead. Inject velocity into your ops stack and create scalable loops for lead tracking, pipeline sync, and real-time logic-driven outreach decisions.'
+      'Design CRM systems using HubSpot, Clay, and Smartlead. Build fast, scalable loops for lead tracking, pipeline sync, and logic-driven outreach.'
   },
   {
     label: '🎯 TARGET LOCKED: Outbound Engines',
@@ -44,7 +44,7 @@ onMounted(() => {
 <template>
   <section id="services" class="py-20 relative text-white">
     <div class="container mx-auto px-6 relative z-10">
-      <h2 class="terminal-header text-left">// Capabilities</h2>
+      <h2 class="terminal-header text-left">Capabilities</h2>
 
       <div class="grid md:grid-cols-3 gap-6 mt-12">
         <div

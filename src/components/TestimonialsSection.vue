@@ -67,7 +67,7 @@ onMounted(() => {
     <div class="container mx-auto px-6 relative z-10">
       <h2 class="terminal-header">Echoes from the Field</h2>
       <div class="relative mt-10">
-        <div class="bg-black border-4 border-neon-blue rounded-md p-6 shadow-inner min-h-[400px] flex flex-col justify-between crt">
+        <div class="bg-black border-4 border-neon-blue rounded-md p-6 shadow-inner terminal-box crt">
           <div class="space-y-6">
             <div
               v-for="(entry, idx) in renderedTestimonials"
@@ -90,6 +90,22 @@ onMounted(() => {
   overflow-wrap: break-word;
   word-wrap: break-word;
   white-space: normal;
+}
+
+.terminal-box {
+  min-height: 400px;
+  height: 500px; /* Fixed height for mobile to prevent layout shift */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Desktop keeps flexible height */
+@media (min-width: 768px) {
+  .terminal-box {
+    height: auto;
+    min-height: 400px;
+  }
 }
 
 @keyframes blink {

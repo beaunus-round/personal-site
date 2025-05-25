@@ -12,7 +12,7 @@ const patchNotes = [
 <template>
   <section id="patch-notes" class="py-20 relative text-white">
     <div class="container mx-auto px-6 relative z-10">
-      <h2 class="terminal-header text-left">// MISSION LOG</h2>
+      <h2 class="terminal-header text-left">MISSION LOG</h2>
       <div class="bg-black border-4 border-neon-pink/60 rounded-lg p-6 mt-10 shadow-inner backdrop-blur-md">
         <div class="grid gap-6">
           <div
@@ -27,7 +27,7 @@ const patchNotes = [
             <div
               :class="index < patchNotes.length - 1 
                 ? 'text-neon-pink text-xs mt-1 whitespace-nowrap' 
-                : 'text-neon-green font-pixel text-xl animate-blink'"
+                : 'text-neon-green font-pixel text-xl animate-blink text-right'"
             >
               <span v-if="index < patchNotes.length - 1">MISSION: COMPLETE</span>
               <a
