@@ -2,13 +2,32 @@
 import { ref, onMounted } from 'vue'
 
 const testimonials = [
-  { text: `Beau patched our outreach firmware and rewired the signal flow. Output: clean, fast, human.`, author: '— Alex R.' },
-  { text: `While others automate noise, he compiles intent. My funnel finally acts sentient.`, author: '— Jamie W.' },
-  { text: `He doesn't do slides. He deploys payloads that self-optimize. That's the difference.`, author: '— Taylor M.' },
-  { text: `Turned my static scripts into a living lead engine. Feels like marketing with a mech suit.`, author: '— Sam P.' },
-  { text: `Think terminal prompt meets trust builder. Beau coded loyalty into our conversion path.`, author: '— Morgan C.' },
-  { text: `We stopped guessing and started executing—like our GTM had a neural interface.`, author: '— Riley S.' }
+  {
+    text: `Beau operates without friction. You hand him the objective, and he quietly moves it forward. No follow-up needed, no excuses, just results.`,
+    author: 'Alex Shegelman, Everleaf Capital'
+  },
+  {
+    text: `There was never a moment Beau wasn’t fully invested. He cared deeply about the work, stood up for what mattered, and kept projects grounded in real purpose.`,
+    author: 'Bill Hahn, The ReCover Initiative'
+  },
+  {
+    text: `Every recurring task? Gone. Beau built systems that handled the work so we could focus on growth. His process cut noise and let the business breathe.`,
+    author: 'Mark Colwell, Commloan & Jones Appraisal'
+  },
+  {
+    text: `He figured things out before we knew we needed them. From client operations to backend cleanups, Beau adapted and delivered in places outside his lane.`,
+    author: 'Corey Brown, Law Firm'
+  },
+  {
+    text: `From the first meeting, Beau spoke with clarity and direction. He came in with a complete strategy and followed through on every piece of it.`,
+    author: 'Julie Wood, Simpli.fi'
+  },
+  {
+    text: `Some people get stuck in planning. Beau doesn't. He took a rough idea, outlined a real plan, and made the whole thing feel straightforward.`,
+    author: 'Luna Rocha, Service Master'
+  }
 ]
+
 
 const renderedTestimonials = ref<{ text: string; author: string }[]>([])
 let index = 0
@@ -94,7 +113,7 @@ onMounted(() => {
 
 .terminal-box {
   min-height: 400px;
-  height: 500px; /* Fixed height for mobile to prevent layout shift */
+  height: 650px; /* Fixed height for mobile to prevent layout shift */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -5,7 +5,7 @@ const patchNotes = [
   { version: 'v3.0.4', text: 'Swapped Google Apps Script for Supabase triggers — 80% faster' },
   { version: 'v2.9.1', text: 'Removed legacy CRM schema; replaced with dynamic field mapping' },
   { version: 'v2.8.0', text: 'Full UI rewrite using Tailwind, glitch-safe animation updates' },
-  { version: '?>???%@?%', text: '[YOUR PROJECT]' }
+  { version: '?>$^?%@?%', text: '[YOUR PROJECT]' }
 ]
 </script>
 
