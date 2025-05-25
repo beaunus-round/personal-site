@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
 
 const patchNotes = [
   { version: 'v3.1.0', text: 'Added new Smartlead enrichment module with GPT-4 fallback' },
