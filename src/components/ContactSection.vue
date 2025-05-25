@@ -10,6 +10,7 @@ const nameError = ref('');
 const emailError = ref('');
 const messageError = ref('');
 const formSuccess = ref(false);
+const isSubmitting = ref(false);
 
 const validateEmail = (email: string) => {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -48,11 +49,28 @@ const validateForm = () => {
   return valid;
 };
 
-const submitForm = () => {
-  if (validateForm()) {
-    try {
-      // Form submission logic would go here
-      // This is a mock success for demonstration
+const submitForm = async () => {
+  if (!validateForm()) return;
+  
+  isSubmitting.value = true;
+
+  try {
+    const response = await fetch('https://formspree.io/f/xnndkper', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        name: name.value,
+        email: email.value,
+        message: message.value,
+        timeframe: timeframe.value,
+        _subject: `New contact from ${name.value}`,
+      }),
+    });
+
+    if (response.ok) {
       formSuccess.value = true;
       
       // Reset form
@@ -65,10 +83,14 @@ const submitForm = () => {
       setTimeout(() => {
         formSuccess.value = false;
       }, 5000);
-    } catch (error) {
-      console.error("Form submission failed:", error);
-      alert("System fault. Retry?");
+    } else {
+      alert('Form submission failed. Please try again.');
     }
+  } catch (error) {
+    console.error('Form submission error:', error);
+    alert('System fault. Retry?');
+  } finally {
+    isSubmitting.value = false;
   }
 };
 </script>
@@ -143,9 +165,10 @@ const submitForm = () => {
           <div>
             <button 
               type="submit" 
+              :disabled="isSubmitting"
               class="terminal-button w-full"
             >
-              Send Transmission
+              {{ isSubmitting ? 'Transmitting...' : 'Send Transmission' }}
             </button>
           </div>
           
