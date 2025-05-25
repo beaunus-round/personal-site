@@ -164,6 +164,7 @@ onMounted(() => {
 
 @keyframes borderFlash {
   0%, 100% {
+  
     border-color: white;
   }
   50% {
