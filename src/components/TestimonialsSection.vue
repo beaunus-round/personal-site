@@ -16,7 +16,7 @@ const testimonials = [
   },
   {
     text: `He figured things out before we knew we needed them. From client operations to backend cleanups, Beau adapted and delivered in places outside his lane.`,
-    author: 'Corey Brown, Law Firm'
+    author: 'Corey Brown, Tung & Assoc. APLC'
   },
   {
     text: `From the first meeting, Beau spoke with clarity and direction. He came in with a complete strategy and followed through on every piece of it.`,
