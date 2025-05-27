@@ -32,7 +32,7 @@ const patchNotes = [
               <span v-if="index < patchNotes.length - 1">MISSION: COMPLETE</span>
               <a
                 v-else
-                href="beauhorton.com/#contact"
+                href="#contact"
                 class="text-neon-green font-pixel text-xl animate-blink"
               >&gt;SELECT MISSION&lt;</a>
             </div>
@@ -40,7 +40,7 @@ const patchNotes = [
         </div>
         <div class="mt-6 text-center">
           <a
-            href="beauhorton.com/#contact"
+            href="#contact"
             class="inline-block font-pixel text-xl text-neon-green border border-neon-green px-6 py-3 rounded hover:bg-neon-green hover:text-black transition"
           >
             [SELECT YOUR MISSION]
