@@ -20,9 +20,9 @@
         
         <!-- Social Links -->
         <div class="flex space-x-6">
-          <a href="#" class="text-white hover:text-neon-pink transition-colors">GitHub</a>
-          <a href="#" class="text-white hover:text-neon-pink transition-colors">LinkedIn</a>
-          <a href="#" class="text-white hover:text-neon-pink transition-colors">Email</a>
+          <a href="https://github.com/beaunus-round" class="text-white hover:text-neon-pink transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/in/beau-horton-967988366/" class="text-white hover:text-neon-pink transition-colors">LinkedIn</a>
+          <a href="mailto:wizard@beauhorton.com" class="text-white hover:text-neon-pink transition-colors">Email</a>
         </div>
       </div>
     </div>
