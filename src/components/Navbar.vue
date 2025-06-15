@@ -8,7 +8,6 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <template>
   <nav class="fixed top-0 left-0 right-0 bg-deep-black/80 backdrop-blur-md border-b border-neon-pink/30 py-4 px-6 z-50">
     <div class="container mx-auto flex justify-between items-center">
       <!-- Logo -->
