@@ -33,7 +33,7 @@ const toggleMenu = () => {
 
     <!-- Mobile Menu -->
     <div v-if="isMenuOpen" 
-      class="md:hidden absolute top-full left-0 right-0 bg-deep-black/90 backdrop-blur-md border-b border-neon-pink/30 py-4">
+      class="md:hidden relative top-full left-0 right-0 bg-deep-black/90 backdrop-blur-md border-b border-neon-pink/30 py-4">
       <div class="container mx-auto flex flex-col space-y-4 px-6">
         <a @click="toggleMenu" href="#about" class="text-white hover:text-neon-pink transition-colors">About</a>
         <a @click="toggleMenu" href="#projects" class="text-white hover:text-neon-pink transition-colors">Projects</a>
